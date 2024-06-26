@@ -43,3 +43,9 @@ data %>% select(Age,`Sleep duration`,`Sleep efficiency`,`REM sleep percentage`, 
 data%>%select(Gender,`Smoking status`)%>% gather(key="variable",value="value")%>% 
 ggplot(aes(x=value))+geom_bar(fill='blue',alpha=0.7)+facet_wrap(~variable,scales ='free')+theme_minimal()+labs(title='Count of Categorical Variables')
 ```
+
+```{r}
+# Print Correlation Matrix
+correlationmatrix=data %>%select(Age,`Sleep duration`,`Sleep efficiency`,`REM sleep percentage`,`Deep sleep percentage`,`Light sleep percentage`,Awakenings,`Caffeine consumption`,`Alcohol consumption`,`Exercise frequency`) %>%cor()
+print(correlationmatrix)
+```
